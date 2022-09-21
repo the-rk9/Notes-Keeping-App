@@ -41,7 +41,7 @@ function App() {
 
     if (isTrue) {
       alert("Title Of Any Notes Cannot Be Same!");
-    } else if (!inputData.title || !inputData.description) {
+    } else if (!inputData.title || inputData.title.length<10?(!inputData.description):0) {
       alert("Fill The Form!");
     } else if (inputData.title && isToggle) {
       setUsersDataMap(
@@ -145,7 +145,7 @@ function App() {
         </div>
         <div className="col-auto">
           <button type="submit" className="btn btn-success">
-            {isToggle ? "Update" : "Add"}
+            {isToggle ? "Update Notes" : "Add Notes"}
           </button>
         </div>
       </form>
